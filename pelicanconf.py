@@ -3,24 +3,22 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Bjarni Jens Kristinsson'
-SITENAME = u'Bjarni Jens\'s blog'
 SITEURL = ''
-
-PATH = 'content'
+SITENAME = u'Bjarni Jens\'s blog'
+SITETITLE = 'blog.bjk.is'
+SITESUBTITLE = 'servers, networks, infrastructure, programming and mathematics'
+SITEDESCRIPTION = 'A personal blog about tech'
 
 TIMEZONE = 'Atlantic/Reykjavik'
-
 DEFAULT_LANG = u'en'
 
+PATH = 'content'
 THEME = 'flex-theme'
-SITETITLE = 'blog.bjk.is'
-SITESUBTITLE = 'Bjarni Jens Kristinsson blogging about tech'
-SITEDESCRIPTION = 'A tech blog'
 
 STATIC_PATHS = ['static']
 SITELOGO = SITEURL + '/static/bjk17.jpg '
 #FAVICON = SITEURL + '/static/favicon.ico'
-DISQUS_SITENAME = 'bjk17'
+#DISQUS_SITENAME = 'bjk17'
 
 MAIN_MENU = True
 MENUITEMS = (('Archives', '/archives.html'),
@@ -35,16 +33,16 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('my website', 'https://bjk.is/'),
+LINKS = (('bjk.is', 'https://bjk.is/'),
          ('bio.bjk.is', 'http://bio.bjk.is/'),)
 
 # Social widget
 SOCIAL = (('facebook', 'https://facebook.com/bjarni.jens'),
           ('linkedin', 'https://linkedin.com/in/bjk17'),
-          ('envelope-o', 'mailto:bjarni.jens@gmail.com'),
-          ('github', 'https://github.com/bjk17'),)
+          ('github', 'https://github.com/bjk17'),
+          ('envelope-o', 'mailto:bjarni.jens@gmail.com'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
