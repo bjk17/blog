@@ -8,4 +8,4 @@ Run ``make devserver`` from project root and open http://localhost:8000 in brows
 
 ## deploying
 
-Clone this repo on production server, run ``make publish`` and serve the static ``output/`` folder.
+Run ``make publish`` and commit the ``output/`` folder as well as source code. Clone this repo on production server and serve the ``output/`` folder.

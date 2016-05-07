@@ -1,3 +1,2 @@
-output/
-*.pid
 *.py[cod]
+*.pid
