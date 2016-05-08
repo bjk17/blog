@@ -19,11 +19,11 @@
 
 
 <meta name="author" content="Bjarni Jens Kristinsson" />
-<meta name="description" content="When you're working on a project you need to take notes. And when your project resolves around servers, networking and self-hosting services you may as well set up your own blog. And so I did just that. Picking a framework I could easily have chosen a blogging platform such ..." />
+<meta name="description" content="When you're working on a project you need to take notes. And when your project revolves around servers, networking and self-hosting services you may as well set up your own blog. And so I did just that. Picking a framework I could easily have chosen a blogging platform such as Blogger, Ghost or Medium to save me all the hazzle. However, I'm curious about servers, networks and infrastructure so I took this chance to set up and host my own blog. It's a healthy experience for every Software Developer to do Operations from time to time. Eventually ..." />
 <meta name="keywords" content="DevOps, Pelican">
 <meta property="og:site_name" content="Bjarni Jens's blog"/>
 <meta property="og:title" content="I'm starting a blog"/>
-<meta property="og:description" content="When you're working on a project you need to take notes. And when your project resolves around servers, networking and self-hosting services you may as well set up your own blog. And so I did just that. Picking a framework I could easily have chosen a blogging platform such ..."/>
+<meta property="og:description" content="When you're working on a project you need to take notes. And when your project revolves around servers, networking and self-hosting services you may as well set up your own blog. And so I did just that. Picking a framework I could easily have chosen a blogging platform such as Blogger, Ghost or Medium to save me all the hazzle. However, I'm curious about servers, networks and infrastructure so I took this chance to set up and host my own blog. It's a healthy experience for every Software Developer to do Operations from time to time. Eventually ..."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:url" content="//blog.bjk.is/im-starting-a-blog.html"/>
 <meta property="og:type" content="article"/>
@@ -72,12 +72,12 @@
     <p>Posted on Sat 07 May 2016 in <a href="//blog.bjk.is/category/blog.html">blog</a></p>
   </header>
   <div>
-    <p>When you're working on a project you need to take notes. And when your project resolves around servers, networking and self-hosting services you may as well set up your own blog.</p>
+    <p>When you're working on a project you need to take notes. And when your project revolves around servers, networking and self-hosting services you may as well set up your own blog.</p>
 <p>And so I did just that.</p>
 <h3>Picking a framework</h3>
 <p>I could easily have chosen a blogging platform such as <a href="https://www.blogger.com/">Blogger</a>, <a href="https://ghost.org/">Ghost</a> or <a href="https://medium.com/">Medium</a> to save me all the hazzle. However, I'm curious about servers, networks and infrastructure so I took this chance to set up and host my own blog. It's a healthy experience for every Software Developer to do Operations from time to time. Eventually, if I get fed up on managing my own server I'll move the blog to some hosted platform.</p>
 <p>I started looking around to see what other people did for their blog. At first I though about installing a fully blown CMS system on my server (inside a container or virtual machine) such as <a href="https://wordpress.org/">WordPress</a>. I was very close to <a href="http://support.ghost.org/developers/">self-hosting Ghost</a> after reading <a href="https://blog.anmoljagetia.me/why-ghost/">Anmol Jagetia's Blog</a>. The biggest pro's of a CMS system is the ability to write your blog in a simple WYSIWYG fashion from whatever computer you're using. But in the end I decided to go for a static blog site generator framwork without any server-side logic. Comments would be handled by <a href="https://disqus.com/">Disqus</a> plugin.</p>
-<p>I searched for and stumbled upon three strong candidates: <a href="https://jekyllrb.com/">Jekyll</a>, <a href="http://blog.getpelican.com/">Pelican</a> and <a href="https://github.com/stef/utterson">Utterson</a>. Jekyll seems to be the most active project and is amongst other things <a href="https://jekyllrb.com/docs/github-pages/">powering GitHub Pages</a> behind the scenes. Utterson is very simple and elegant and uses Unix shell scripting instead of high-level programming languages. I tried all three and ended on choosing Pelican mainly because I found <a href="https://blog.alexandrevicenzi.com/flex-pelican-theme.html">a beauthiful theme</a> and it was the easiest to configure.</p>
+<p>I searched for and stumbled upon three strong candidates: <a href="https://jekyllrb.com/">Jekyll</a>, <a href="http://blog.getpelican.com/">Pelican</a> and <a href="https://github.com/stef/utterson">Utterson</a>. Jekyll seems to be the most active project and is amongst other things <a href="https://jekyllrb.com/docs/github-pages/">powering GitHub Pages</a> behind the scenes. Utterson is very simple and elegant and uses Unix shell scripting instead of high-level programming languages. I tried all three and ended on choosing Pelican mainly because I found <a href="https://blog.alexandrevicenzi.com/flex-pelican-theme.html">a beautiful theme</a> and it was the easiest to configure.</p>
 <h3>Hosting the blog</h3>
 <p>So now the process is this: I write my blogposts in Markdown on my laptop, then I render them to HTML with Pelican, commit and push them to my <a href="https://github.com/bjk17/blog">GitHub repository</a> and then finally <code>git pull</code> them on my server. The process is a bit more manual then I'd prefer as I don't have direct SSH access to where I host my blog site. (I serve it from an LXC/LXD container behind an Apache proxy, but more on that later.) Pelican has built-in deployment tools that can render and deploy directly to your server over SSH. I would need to change my server infrastructure to be able to deploy in this way. This is something I will think about. It's ugly and <em>semantically incorrect</em> (I'll be using this phrase a lot) to keep both the markdown files and the rendered HTML in source control. </p>
 <p>In the next few blog posts I want to write about my current server architecture/infrastructure hobby project and all the technical tidbits related to that. After all, that's why I started this blog.</p>
@@ -125,7 +125,7 @@
   },
   "image": "/static/bjk17.jpg ",
   "url": "//blog.bjk.is/im-starting-a-blog.html",
-  "description": "When you're working on a project you need to take notes. And when your project resolves around servers, networking and self-hosting services you may as well set up your own blog. And so I did just that. Picking a framework I could easily have chosen a blogging platform such ..."
+  "description": "When you're working on a project you need to take notes. And when your project revolves around servers, networking and self-hosting services you may as well set up your own blog. And so I did just that. Picking a framework I could easily have chosen a blogging platform such as Blogger, Ghost or Medium to save me all the hazzle. However, I'm curious about servers, networks and infrastructure so I took this chance to set up and host my own blog. It's a healthy experience for every Software Developer to do Operations from time to time. Eventually ..."
 }
 </script></body>
 </html>

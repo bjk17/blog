@@ -18,7 +18,8 @@ THEME = 'flex-theme'
 STATIC_PATHS = ['static']
 SITELOGO = SITEURL + '/static/bjk17.jpg '
 #FAVICON = SITEURL + '/static/favicon.ico'
-#DISQUS_SITENAME = 'bjk17'
+
+SUMMARY_MAX_LENGTH = 100
 
 MAIN_MENU = True
 MENUITEMS = (('Archives', '/archives.html'),
