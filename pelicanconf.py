@@ -15,11 +15,14 @@ DEFAULT_LANG = u'en'
 PATH = 'content'
 THEME = 'flex-theme'
 
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ['render_math']
+
 STATIC_PATHS = ['static']
 SITELOGO = SITEURL + '/static/bjk17.jpg '
 #FAVICON = SITEURL + '/static/favicon.ico'
 
-SUMMARY_MAX_LENGTH = 100
+SUMMARY_MAX_LENGTH = 50
 
 MAIN_MENU = True
 MENUITEMS = (('Archives', '/archives.html'),
