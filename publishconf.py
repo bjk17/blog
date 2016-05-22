@@ -13,7 +13,7 @@ from pelicanconf import *
 SITEURL = '//blog.bjk.is'
 RELATIVE_URLS = False
 
-DISQUS_SITENAME = 'bjk17'
+DISQUS_SITENAME = 'blogbjkis'
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
