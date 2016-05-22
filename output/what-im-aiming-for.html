@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="//blog.bjk.is/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="//blog.bjk.is/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="//blog.bjk.is/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="//blog.bjk.is/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Bjarni Jens's blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Bjarni Jens Kristinsson" />
+<meta name="description" content="Before I moved my NUC I had two Raspberry Pi's (web server and XBMC/Kodi media player) and one Cubietruck (NFS server) under the TV. The NUC will take over those tasks and provide me with better hardware to test new features. As I'm living in a small ..." />
+<meta name="keywords" content="DevOps, infrastructure, Ubuntu">
+<meta property="og:site_name" content="Bjarni Jens's blog"/>
+<meta property="og:title" content="What I'm aiming for"/>
+<meta property="og:description" content="Before I moved my NUC I had two Raspberry Pi's (web server and XBMC/Kodi media player) and one Cubietruck (NFS server) under the TV. The NUC will take over those tasks and provide me with better hardware to test new features. As I'm living in a small ..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="//blog.bjk.is/what-im-aiming-for.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-05-22 00:00:00+00:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="//blog.bjk.is/author/bjarni-jens-kristinsson.html">
+<meta property="article:section" content="my NUC as a server"/>
+<meta property="article:tag" content="DevOps"/>
+<meta property="article:tag" content="infrastructure"/>
+<meta property="article:tag" content="Ubuntu"/>
+<meta property="og:image" content="/static/bjk17.jpg ">
+  <title>Bjarni Jens's blog &ndash; What I'm aiming for</title>
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="//blog.bjk.is">
+        <img src="/static/bjk17.jpg " alt="blog.bjk.is" title="blog.bjk.is">
+      </a>
+      <h1><a href="//blog.bjk.is">blog.bjk.is</a></h1>
+<p>servers, networks, infrastructure, programming and mathematics</p>      <nav>
+        <ul class="list">
+          <li><a href="https://bjk.is/" target="_blank">bjk.is</a></li>
+          <li><a href="http://bio.bjk.is/" target="_blank">bio.bjk.is</a></li>
+        </ul>
+      </nav>
+      <ul class="social">
+        <li><a class="sc-facebook" href="https://facebook.com/bjarni.jens" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="sc-linkedin" href="https://linkedin.com/in/bjk17" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/bjk17" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-envelope-o" href="mailto:bjarni.jens@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <nav>
+      <a href="//blog.bjk.is">Home</a>
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+      <a href="//blog.bjk.is/feeds/all.atom.xml">Atom</a>
+    </nav>
+
+<article>
+  <header>
+    <h1 id="what-im-aiming-for">What I'm aiming for</h1>
+    <p>Posted on Sun 22 May 2016 in <a href="//blog.bjk.is/category/my-nuc-as-a-server.html">my NUC as a server</a></p>
+  </header>
+  <div>
+    <p>Before I moved my NUC I had two Raspberry Pi's (web server and <a href="https://kodi.tv/">XBMC/Kodi</a> media player) and one <a href="http://docs.cubieboard.org/tutorials/cubietruck/start">Cubietruck</a> (NFS server) under the TV. The NUC will take over those tasks and provide me with better hardware to test new <em>features</em>. As I'm living in a small studio apartment with my girlfriend I'll try my best to keep it as silent as its predecessors.</p>
+<h3>A server and HTPC</h3>
+<p>My NUC will not only be a server. I'm taking down the RPi running Kodi and connecting the HDMI cable to the NUC instead. I want to be running a whole DE (Desktop Environment) both for when I turn on the TV and also to have a remote desktop I'd be able to connect to over the internet. Sure, I can do most of the stuff through SSH, but this is one aspect of "poking around with" I'd like to try out.</p>
+<p>I'm going to install Ubuntu 16.04 and I need to chose between installing the server version and applying the <code>ubuntu-desktop</code> package on top, or installing Ubuntu Desktop and configure server packages afterwards. The semantically correct way would be to install Ubuntu Server and run the DE as a secure and isolated service. I even posted <a href="http://askubuntu.com/questions/765612/running-ubuntu-desktop-in-lxc-lxd-on-top-of-ubuntu-server/">a question on Askubuntu</a> wether this was possible using Linux containers (LXC) but haven't gotten any helpful responses yet.</p>
+<h3>Monitoring</h3>
+<p>I'm using this opportunity to build my server <a href="https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design">bottom-up</a>. I think that's the right way to build quality software and infrastructure. That means that after I've installed the OS the first thing I should do (after securing SSH) is to set up some kind of monitoring.</p>
+<p>My main points of interest are physical monitoring such as temperature of core components and frequencies of fan and CPU. I want to be well aware of hardware utilization such as SSD/HDD free space and IO, memory usage and network IO. I'm very curious of power usage but it seems I can't read out those stats from the OS unless I buy some kind of (smart) power meter to plug into the wall. When I used a Linux laptop I could read the Watt usage straight from the battery.</p>
+<p>On top of these core metrics there are some extra bits of information I'd like to have displayed on the dashboard. F.ex. how many SSH sessions are currently open, is the HDD in active or standby state, how long since I last rebooted? These are basically metrics that I can produce with simple commands or shell scripts. Later I could add application monitoring for websites and other software I'd be running on the NUC. </p>
+<p>The dashboard would be presented as a website that would be served on an obscure port on the NUC that would not be open to the internet (because this is sensitive information). However, I would be able to view it on my local net as well as remotely by setting up <a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding">SSH port forwarding</a>. </p>
+<h3>Web services</h3>
+<p>I own the domain bjk.is which I will use to connect to the machine and host my main personal website. I will add additional DNS entries beta.bjk.is, bio.bjk.is and now blog.bjk.is for my different subsites (some in collaboration with others). I would like to do that the right way by isolating the webistes from the core server and implement them as "detachable components". </p>
+<p>At NextCODE we use <a href="https://aws.amazon.com/">Amazon Web Services</a> (AWS) quite a lot. We also manage our own infrastructure with software from <a href="https://www.vmware.com/">VMware</a> and <a href="https://www.greenqloud.com/">Greenqloud</a>. Both AWS and Greenqloud's <a href="https://www.qstack.com/">Qstack</a> have web-based interface (as well as scriptable API's) where we can create and start virtual machines (VM) with a public IP address and configurable amount of CPU cores, RAM and storage. </p>
+<p>This sort of <a href="https://en.wikipedia.org/wiki/Cloud_computing#Infrastructure_as_a_service_.28IaaS.29">infrastructure as a service</a> (IaaS) is what I aim for when setting up the NUC. There are a lot of limitations, though, as I only have one physical computer and one public IP address to work with. But to some degree I can seperate websites and other processes into pluggable independent containers or VMs that won't affect each other. </p>
+<h3>Network-attached storage (NAS)</h3>
+<p>The underlying server OS have direct access to all the hardware, including the 2TB spinning HDD with all my data (don't worry, I do backups). Therefore, the server OS should also be responsible of exposing and sharing the data with all parties involved. The media player in the DE needs access to it, my other computers on the home network do so too and maybe some future application running on NUC as well. When I'm not at home I want to be able to mount the data drive over the internet. The SSD is dedicated for the OS and other software whether it's core server or inside containers/VMs.</p>
+<p>In the next blog post(s) I'll write about what feature boxes I managed to tick and how I implemented them.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="//blog.bjk.is/tag/devops.html">DevOps</a>
+      <a href="//blog.bjk.is/tag/infrastructure.html">infrastructure</a>
+      <a href="//blog.bjk.is/tag/ubuntu.html">Ubuntu</a>
+    </p>
+  </div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bjk17';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</article>
+
+    <footer>
+        <p>&copy; Bjarni Jens Kristinsson </p>
+<p>Built using <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a></p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "What I'm aiming for",
+  "headline": "What I'm aiming for",
+  "datePublished": "2016-05-22 00:00:00+00:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bjarni Jens Kristinsson",
+    "url": "//blog.bjk.is/author/bjarni-jens-kristinsson.html"
+  },
+  "image": "/static/bjk17.jpg ",
+  "url": "//blog.bjk.is/what-im-aiming-for.html",
+  "description": "Before I moved my NUC I had two Raspberry Pi's (web server and XBMC/Kodi media player) and one Cubietruck (NFS server) under the TV. The NUC will take over those tasks and provide me with better hardware to test new features. As I'm living in a small ..."
+}
+</script></body>
+</html>
