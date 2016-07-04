@@ -1,2 +1,5 @@
 *.py[cod]
 *.pid
+
+## Now generating output on hosting server
+output/
