@@ -1,4 +1,5 @@
 Title:    Server version 0.1 -- OS and monitoring
+Modified: 2016-07-04
 Tags:     DevOps, infrastructure, Ubuntu, monitoring, netdata
 Category: my NUC as a server
 Authors:  Bjarni Jens Kristinsson
@@ -30,6 +31,8 @@ To achieve all this I ran
     echo "/dev/disk/by-uuid/${HDD_UUID} {
         spindown_time = 60
     }" | sudo tee -a /etc/hdparm.conf
+
+**Edit 2016-07-04:** If the HDD doesn't go to sleep as expected you may have to disable SMART monitoring tools with ``sudo smartctl --offlineauto=off /dev/sdX`` where X is the drive letter. This is a persistent change which survives reboots and (I think) drive formats. Thanks goes to [Stack Exchange](http://unix.stackexchange.com/a/58645/118840) as usual.
 
 ### Monitoring solution
 
