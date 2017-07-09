@@ -1,0 +1,5 @@
+# Nothing needed on Docker build time except Dockerfile and requirements.txt
+
+*
+!Dockerfile
+!requirements.txt
